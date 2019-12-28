@@ -49,11 +49,6 @@ public  class My_HashMap<K, V> extends My_AbstractMap<K,V> implements My_Map<K,V
         int hash = null == key ? 0 : hash(key);
         int i = indexFor(hash, table.length);
 
-        /**
-         * Look for preexisting entry for key.  This will never happen for
-         * clone or deserialize.  It will only happen for construction if the
-         * input Map is a sorted map whose ordering is inconsistent w/ equals.
-         */
         for (Entry<K,V> e = table[i]; e != null; e = e.next) {
             Object k;
             if (e.hash == hash &&
@@ -266,10 +261,6 @@ public  class My_HashMap<K, V> extends My_AbstractMap<K,V> implements My_Map<K,V
         return switching;
     }
     private static class Holder {
-
-        /**
-         * Table capacity above which to switch to use alternative hashing.
-         */
         static final int ALTERNATIVE_HASHING_THRESHOLD;
 
         static {
