@@ -5,6 +5,7 @@ import java.util.*;
 public class TestHashMap {
     public static void main(String[] args) {
         My_Map m=new My_HashMap();
+        Map n2=new HashMap();
         Map m1=new TreeMap();
         m.put("1","tre");
         m.put("2","dsf");
